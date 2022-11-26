@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snipet Text</title>
     <style>
+        :root {
+            --gap-val: 15px;
+        }
         body {
             background-color: #212429;
+            margin: auto 20px;
         }
         main {
             width: 100%;
@@ -27,13 +31,12 @@
         }
         main > p {
             width: 100%;
-            max-width: 460px;
-            font-size: .9rem;
+            max-width: 515px;
             margin-bottom: 30px;
         }
         .cards {
             display: flex;
-            gap: 15px;
+            gap: var(--gap-val);
         }
         .card {
             background-color: #32363c;
@@ -50,21 +53,40 @@
         .title {
             margin: 0 0 10px 0;
         }
+        .card-body > p {
+            color: rgb(199, 198, 198);
+
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
         button {
             font-family: 'AT Open Sans';
             background-color: #4a4e57;
             border: 0;
-            color: rgb(219, 219, 219);
+            color: white;
             padding: 5px 10px;
             cursor: pointer;
         }
-        @media screen and (max-width: 550px) {
+        @media screen and (max-width: 700px) {
             main {
-            margin-bottom: 100px;
-
+                margin-bottom: 100px;
             }
             .cards {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .card {
+                width: calc(50% - var(--gap-val)  / 2);
+            }
+        }
+        @media screen and (max-width: 550px) {
+            .cards {
                 flex-direction: column;
+            }
+            .card {
+                width: 100%;
             }
         }
     </style>
@@ -79,7 +101,7 @@
             <div class="card">
                 <div class="img"><img src="dumbbell.jpg" alt=""></div>
                 <div class="card-body">
-                    <h1 class="title">Titulo</h1>
+                    <h2 class="title">Titulo</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas vero.</p>
                     <button>Continue reading</button>
                 </div>
@@ -87,15 +109,15 @@
             <div class="card">
                 <div class="img"><img src="dumbbell.jpg" alt=""></div>
                 <div class="card-body">
-                    <h1 class="title">Titulo</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas vero autem eos quam quod repudiandae.</p>
+                    <h2 class="title">Titulo</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur Quas vero autem eos quam adipisicing elit. quod repudiandae.</p>
                     <button>Continue reading</button>
                 </div>
             </div>
             <div class="card">
                 <div class="img"><img src="dumbbell.jpg" alt=""></div>
                 <div class="card-body">
-                    <h1 class="title">Titulo</h1>
+                    <h2 class="title">Titulo</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas vero autem eos quam quod repudiandae necessitatibus illo aut veniam sequi.</p>
                     <button>Continue reading</button>
                 </div>
